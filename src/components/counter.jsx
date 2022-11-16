@@ -1,14 +1,23 @@
 import React, { Component } from 'react';
 
 class Counter extends Component {
-    state = {  } 
+    state = {
+        count:0
+      } 
+      styles = {
+        fontSize:50
+      }
     render() { 
         return (
             <React.Fragment>
-            <h1>Hello World</h1>
-            <button>Increment</button>
+            <span className='badge badge-primary m-2 ' >{this.formetCount()}</span>
+            <button className='btn btn-secondary btn-sm' >Increment</button>
             </React.Fragment>
         );
+    }
+    formetCount(){
+        const {count} = this.state
+        return count === 0 ? "zero" : count
     }
 }
 
