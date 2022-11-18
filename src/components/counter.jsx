@@ -4,9 +4,6 @@ class Counter extends Component {
     state = {
         count:0
       } 
-      styles = {
-        fontSize:50
-      }
     render() { 
         return (
             <React.Fragment>
