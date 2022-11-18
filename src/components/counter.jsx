@@ -2,13 +2,16 @@ import React, { Component } from 'react';
 
 class Counter extends Component {
     state = {
-        count:1
+        count: 0
       } 
+      handleChange = () =>{
+          this.setState({ count: this.state.count + 1})
+      }
     render() {
         return (
             <React.Fragment>
             <span className={this.getBadgeClasses()} >{this.formetCount()}</span>
-            <button className='btn btn-secondary btn-sm' >Increment</button>
+            <button onClick={this.handleChange} className='btn btn-secondary btn-sm' >Increment</button>
             </React.Fragment>
         );
     }
