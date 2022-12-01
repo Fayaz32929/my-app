@@ -24,8 +24,20 @@ handleIncrement = (counter) =>{
     const counters = [...this.state.counters]
     const index = counters.indexOf(counter)
     counters[index] = { ...counter }
+    
     counters[index].value++
     this.setState({counters})
+}
+handleDecrement = (counter) =>{
+    console.log(`hi ${counter} `)
+
+    const counters = [...this.state.counters]
+    const index = counters.indexOf(counter)
+    counters[index] = { ...counter }
+    if (counters[index].value === 0 )return ;
+    else
+    counters[index].value--
+    this.setState({counters});
 }
 handleReset = ()=>{
     const counters = this.state.counters.map((c)=>{
@@ -39,6 +51,7 @@ handleReset = ()=>{
       <main className='container'> <Counters
         counters={this.state.counters}
         onReset={this.handleReset}
+        onDecrement={this.handleDecrement}
         onIncrement={this.handleIncrement}
         onDelete={this.handleDelete}/></main>
     </React.Fragment>);
